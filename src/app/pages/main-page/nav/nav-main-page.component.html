@@ -1,0 +1,41 @@
+<!-- <nav>
+    <div class="container">
+        <h2 class="logo">Social</h2>
+        <div class="search-bar">
+            <i class="uil uil-search"></i>
+            <input type="text" placeholder="Search for creators, inspirations and projects" />
+        </div>
+        <div class="create">
+            <label class="btn btn-primary" for="create-post">Create</label>
+            <div class="profile-pic">
+                <img src="https://res.cloudinary.com/freecodez/image/upload/v1698067298/images/fy8azbqxhgdrbbijhipe.webp"
+                    alt="pic 1" />
+            </div>
+        </div>
+    </div>
+</nav> -->
+<nav>
+    <div class="container">
+      <h2 class="logo">Social</h2>
+  
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="uil uil-search"></i>
+        <input type="text" placeholder="Search for creators, inspirations and projects" />
+      </div>
+  
+      <!-- Create Post / Avatar Section -->
+      <div class="create">
+        <label class="btn btn-primary" for="create-post" *ngIf="isLogin">Create</label>
+        
+        <!-- Show avatar if user is logged in, otherwise show login button -->
+        <div *ngIf="isLogin; else loginTemplate" class="profile-pic">
+          <img [src]="user?.avatar" alt="User Avatar" />
+        </div>
+        <ng-template #loginTemplate>
+          <button class="btn btn-primary" (click)="redirectToLogin()">Login</button>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
+  

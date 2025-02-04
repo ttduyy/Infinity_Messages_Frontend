@@ -1,0 +1,10 @@
+
+# Bỏ qua thư mục node_modules
+node_modules/
+
+# Nếu muốn bỏ qua file tạm trong src, bạn có thể chỉ định như sau:
+src/*.log
+src/*.tmp
+
+.angular/
+.vscode/

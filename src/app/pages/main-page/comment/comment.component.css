@@ -1,0 +1,112 @@
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    b {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    small {
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 5px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .replies {
+        margin-left: 20px;
+        padding-left: 10px;
+        border-left: 2px solid #ddd;
+        margin-top: 15px;
+    }
+
+    .reply-button {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    /* Input section for reply */
+    .comment textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 10px;
+        resize: vertical;
+        box-sizing: border-box;
+    }
+
+    .comment button {
+        margin-top: 5px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #218838;
+        }
+    }
+}
+
+/* Styling for replies in the comment */
+.comment .replies {
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 2px solid #ddd;
+    margin-top: 15px;
+}
+
+/* Styling for textarea (reply input) */
+.comment textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    resize: vertical;
+}
+
+/* Hover effects for buttons */
+.comment button:hover {
+    background-color: #0056b3;
+}

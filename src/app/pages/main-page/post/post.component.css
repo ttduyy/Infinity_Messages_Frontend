@@ -1,0 +1,194 @@
+/* General Feed Styles */
+.feed {
+    width: 100%;
+    max-width: 800px;
+    /* Giới hạn chiều rộng của feed */
+    margin: 0 auto;
+    /* Căn giữa feed */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* User Information */
+.feed .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.feed .user .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.feed .user .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feed .user .info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #333;
+}
+
+.feed .user .info small {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Caption Styling */
+.feed .caption {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feed .caption p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.feed .caption p:hover {
+    color: #007bff;
+    /* Màu thay đổi khi hover */
+    cursor: pointer;
+}
+
+/* Comments Section */
+.feed .comments {
+    margin-top: 20px;
+}
+
+.feed .comments app-comment {
+    margin-top: 10px;
+}
+
+/* New Comment Input */
+.feed .new-comment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.feed .new-comment textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.feed .new-comment button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.feed .new-comment button:hover {
+    background-color: #0056b3;
+    /* Màu thay đổi khi hover */
+}
+
+/* Comment Box Styling */
+.comment {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.comment p {
+    margin: 0;
+}
+
+/* Replies Section */
+.replies {
+    margin-left: 20px;
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+}
+
+/* Reply Box */
+.reply-box {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.reply-box input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reply-box button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reply-box button:hover {
+    background-color: #0056b3;
+    /* Màu thay đổi khi hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .feed {
+        padding: 10px;
+    }
+
+    .feed .user {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .feed .user .profile-pic {
+        margin-bottom: 10px;
+    }
+
+    .feed .user .info h3 {
+        font-size: 1rem;
+    }
+
+    .feed .caption p {
+        font-size: 1rem;
+    }
+
+    .feed .new-comment textarea {
+        font-size: 0.9rem;
+    }
+
+    .feed .new-comment button {
+        font-size: 0.9rem;
+    }
+
+    .comment {
+        font-size: 0.9rem;
+        /* Điều chỉnh cỡ chữ cho các bình luận */
+    }
+}

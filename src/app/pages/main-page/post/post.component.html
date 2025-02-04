@@ -1,0 +1,60 @@
+<!-- <div class="feed">
+    <div class="user">
+        <div class="profile-pic">
+            <img [src]='' alt="User Profile" />
+        </div>
+        <div class="info">
+            <h3>{{ post.username }}</h3>
+            <small>{{ post.createAt }}</small>
+        </div>
+    </div>
+
+    <div class="caption">
+        <p>
+            <b>{{ post.username }}</b> {{ post.content }}
+        </p>
+    </div>
+
+    
+    <div class="comments">
+        <ng-container *ngFor="let comment of treeComments">
+            <app-comment [comment]="comment"></app-comment>
+        </ng-container>
+    </div>
+</div> -->
+
+<div class="feed">
+  <!-- Lặp qua từng post trong mảng posts -->
+  <div *ngFor="let post of posts">
+    <div class="user">
+      <div class="profile-pic">
+        <!-- Hiển thị ảnh người dùng từ đường dẫn trong post -->
+        <img [src]="" alt="User Profile" />
+      </div>
+      <div class="info">
+        <h3>{{ post.username }}</h3>
+        <!-- <small>{{ post.createAt }}</small> -->
+        <small>{{ formatDate(post.createAt) }}</small>
+      </div>
+    </div>
+
+    <div class="caption">
+      <p>
+        {{ post.content }}
+      </p>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments">
+      <ng-container *ngFor="let comment of post.comments">
+        <app-comment [comment]="comment"></app-comment>
+      </ng-container>
+    </div>
+
+    <!-- Input for new comment -->
+    <div class="new-comment">
+      <textarea [(ngModel)]="newCommentContent[post.id ?? '']" placeholder="Add a comment..."></textarea>
+      <button (click)="submitComment(post)">Submit</button>
+    </div>
+  </div>
+</div>

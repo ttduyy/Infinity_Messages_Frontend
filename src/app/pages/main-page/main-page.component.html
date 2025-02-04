@@ -1,0 +1,115 @@
+<app-nav-main-page [user]="user" [isLogin]="isLogin"></app-nav-main-page>
+
+<main class="main">
+    <div class="container">
+        <div class="left">
+            <a class="profile">
+                <div class="profile-pic">
+                    <img src={{user?.avatar}} />
+                </div>
+                <div class="handle">
+                    <h4>{{user?.username}}</h4>
+                    <p class="text-muted">&#64;{{user?.username}}</p>
+                </div>
+            </a>
+            <div class="sidebar">
+                <a class="menu-item active">
+                    <span><i class="uil uil-home"></i></span>
+                    <h3>Home</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-compass"></i></span>
+                    <h3>Explore</h3>
+                </a>
+                <a class="menu-item" id="notifications">
+                    <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
+                    <h3>Notifications</h3>
+                    <div class="notifications-popup">
+                        <div>
+                            <div class="profile-pic">
+                                <img
+                                    src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                            </div>
+                            <div class="notification-body">
+                                <b>Abigail Willey</b> accepted your friend request
+                                <small class="text-muted">2 DAYS AGO</small>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="profile-pic">
+                                <img src="https://i.pinimg.com/474x/e1/d6/32/e1d632b7d8ba9ffd34318a09ddf1b275.jpg" />
+                            </div>
+                            <div class="notification-body">
+                                <b>Varun Nair</b> commented on your post
+                                <small class="text-muted">1 HOUR AGO</small>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="profile-pic">
+                                <img
+                                    src="https://i.pinimg.com/280x280_RS/60/72/af/6072af5d0841567c677a9e7597501563.jpg" />
+                            </div>
+                            <div class="notification-body">
+                                <b>Marry Opmong</b> and 210 other liked your post
+                                <small class="text-muted">4 MINUTES AGO</small>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="profile-pic">
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx7jXK7iCNJK_u4XvbwTkXPx140LlR1qh2XoihxvkMgM2ZvViJaIxaPFleTUJ7SBp9xBw&usqp=CAU" />
+                            </div>
+                            <div class="notification-body">
+                                <b>Wilson Fisk</b> started following you
+                                <small class="text-muted"> 11 HOURS AGO</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-bookmark"></i></span>
+                    <h3>Bookmarks</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-setting"></i></span>
+                    <h3>Settings</h3>
+                </a>
+
+                <label class="btn btn-primary" for="create-post">Create Post</label>
+            </div>
+        </div>
+
+        <div class="middle">
+            <form class="create-post">
+                <div class="profile-pic">
+                    <img src="{{user?.avatar}}"
+                        alt="Profile Picture" />
+                </div>
+                <div class="input-box" (click)="showPostBox()">
+                    <span *ngIf="!isPostBoxVisible" class="">What's on your mind, Freecodez?</span>
+                </div>
+                <input type="submit" value="Post" class="btn btn-primary" />
+
+                <!-- Box lớn để nhập nội dung -->
+
+                <div class="post-box" *ngIf="isPostBoxVisible" [formGroup]="postForm">
+                    <textarea 
+                        id="postContent" [(ngModel)]="postContent" name="postContent" (input)="updateWordCount()" formControlName="content"
+                        placeholder="Viết gì đó..."></textarea>
+                    <div class="word-count">{{ wordCount }} từ</div>
+                    <button (click)="submitPost()" class="btn primary">Đăng</button>
+                    <button (click)="closePostBox()" class="btn secondary">Hủy</button>
+                </div>
+
+            </form>
+
+            <!-- <app-post *ngFor="let post of posts" [post]="post">
+            </app-post> -->
+            <app-post [posts]="posts" [comments]="comments"></app-post>
+            <!-- <app-post [posts]="posts" [comments]="comments"></app-post> -->
+
+
+
+        </div>
+    </div>
+</main>

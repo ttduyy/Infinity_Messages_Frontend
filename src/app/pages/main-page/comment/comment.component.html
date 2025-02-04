@@ -1,0 +1,26 @@
+<!-- comment.component.html -->
+<div class="comment">
+    <div class="comment-content">
+        <b>{{ comment.username }}</b>: {{ comment.content }}
+        <div>
+            <small>{{ formatDate(comment.createdAt) }}</small>
+
+            <!-- Reply Button -->
+            <button (click)="toggleReplyInput(comment)">Reply</button>
+
+        </div>
+    </div>
+
+    <!-- Reply Input Section -->
+    <div *ngIf="comment.showReplyInput">
+        <textarea [(ngModel)]="comment.replyContent" placeholder="Type your reply here..."></textarea>
+        <button (click)="submitReply(comment)">Submit</button>
+    </div>
+
+    <!-- Reply Section -->
+    <div class="replies" *ngIf="comment.replies?.length">
+        <ng-container *ngFor="let reply of comment.replies">
+            <app-comment [comment]="reply"></app-comment>
+        </ng-container>
+    </div>
+</div>
